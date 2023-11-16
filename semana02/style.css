@@ -1,0 +1,15 @@
+body h1{
+    color: red;
+}
+
+a:visited{
+    color: white;
+}
+
+a:hover{
+    color: blue;
+}
+
+a{
+    color:blueviolet
+}
