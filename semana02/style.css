@@ -1,15 +1,24 @@
 body h1{
-    color: red;
+    color: #776B5D;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
 }
 
 a:visited{
-    color: white;
+    color: #F3EEEA;
 }
 
 a:hover{
-    color: blue;
+    color: #EBE3D5;
 }
 
 a{
-    color:blueviolet
+    color:#776B5D;
 }
+
+
+h3{
+    font-weight: 500;
+}
+
