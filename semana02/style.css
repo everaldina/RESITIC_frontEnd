@@ -22,3 +22,31 @@ h3{
     font-weight: 500;
 }
 
+#amarelo{
+    color: rgb(245, 210, 10);
+}
+
+#vermelho{
+    color: red;
+}
+
+#azul{
+    color: rgb(0, 132, 255);
+}
+
+#marron{
+    color: rgb(165, 122, 42);
+}
+
+#violeta{
+    color: rgb(111, 18, 165);
+}
+
+.cor{
+    width: 200px;
+    height: 200px;
+}
+
+body{
+    font-weight: normal;
+}
