@@ -1,0 +1,23 @@
+h2, h5{
+    color: rgb(143, 143, 12);
+}
+
+li{
+    color: rgb(231, 134, 88)
+}
+
+.moveis li.usada{
+    color: greenyellow
+}
+
+.lista li.usada{
+    color: purple
+}
+
+.caixa p{
+    color: blue;
+}
+
+.alimentos{
+    color: rgb(0, 225, 255) !important;
+}
