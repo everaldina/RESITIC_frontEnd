@@ -1,0 +1,25 @@
+/* [320px - 480px] - mobile devices */ 
+@media (min-width: 320px) and (max-width: 480px) {
+
+}
+
+/* [481px - 768px] - tablets, iPads*/
+@media (min-width: 481px) and (max-width: 768px) {
+
+}
+
+/* [769px - 1024px] - laptops, small screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+}
+
+/* [1025px - 1200px] - desktops, large screens */
+@media (min-width: 1025px) and (max-width: 1200px) {
+
+}
+
+/* [1201px - 1920px] - extra large screens, TVs */
+@media (min-width: 1201px) and (max-width: 1920px) {
+
+}
+
