@@ -1,0 +1,9 @@
+/* Screens smaller than 500px */
+@media (max-width: 500px){
+
+}
+
+/* Screens bigger than 500px */
+@media (min-width: 500px){
+
+}
