@@ -1,0 +1,29 @@
+.container-destinos{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    
+}
+
+.roteiros-viagens{
+    border-radius: 10px;
+    background-color: violet;
+    padding: 10px;
+    text-align: center;
+
+}
+
+img{
+    width: 9rem;
+    height: 6rem;
+}
+
+
+button{
+    margin-top: 10px;
+    background-color: greenyellow;
+    border-color: transparent;
+    border-radius: 5px;
+}
