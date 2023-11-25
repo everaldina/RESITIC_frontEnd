@@ -7,66 +7,67 @@
 </head>
 <body>
     <h1>Cadastro dos interessados</h1>
-    <form>
-        <p>
-            <label for="fname">
-                <strong>Nome</strong>
+    <div style = "width:fit-content">
+        <form>
+            <p>
+                <label for="fname">
+                    <strong>Nome</strong>
+                    <br>
+                    <input style="width: 98%" type="text" id = "fname">
+                </label>
+            </p>
+
+            <p>
+                <label for="femail">
+                    <strong>Email</strong>
+                    <br>
+                    <input style="width: 98%"  type="email" id = "femail" placeholder="email@outlook.com">
+                </label>
+            </p>
+
+            <p>
+                <label for="faddress">
+                    <strong>Endereço</strong>
+                    <br>
+                    <input style="width: 98%" type="text" id = "faddress" placeholder="Rua A nº B, Bairro">
+                </label>
+            </p>
+
+            <p>
+                <table>
+                    <tr>
+                        <td>
+                            <label for="fzip-code">
+                                <strong>CEP</strong>
+                                <br>
+                                <input type="text" id = "fzip-code" placeholder="XXXXX-XXX">
+                            </label>
+                        </td>
+
+                        <td>
+                            <label for="fcity">
+                                <strong>Cidade</strong>
+                                <br>
+                                <input type="text" id = "fcity">
+                            </label>
+                        </td>
+
+                        <td>
+                            <label for="fcountry">
+                                <strong>País</strong>
+                                <br>
+                                <input type="text" id = "fcountry">
+                            </label>
+                        </td>
+                    </tr>
+
+                </table>
                 <br>
-                <input style="width: 75%" type="text" id = "fname">
-            </label>
-        </p>
+                <input type="submit" value="Enviar">
+                
+            </p>
 
-        <p>
-            <label for="femail">
-                <strong>Email</strong>
-                <br>
-                <input style="width: 75%" type="email" id = "femail" placeholder="email@outlook.com">
-            </label>
-        </p>
-
-        <p>
-            <label for="faddress">
-                <strong>Endereço</strong>
-                <br>
-                <input style="width: 75%"type="text" id = "faddress" placeholder="Rua A nº B, Bairro">
-            </label>
-        </p>
-
-        <p>
-            <table>
-                <tr>
-                    <td>
-                        <label for="fzip-code">
-                            <strong>CEP</strong>
-                            <br>
-                            <input type="text" id = "fzip-code" placeholder="XXXXX-XXX">
-                        </label>
-                    </td>
-
-                    <td>
-                        <label for="fcity">
-                            <strong>Cidade</strong>
-                            <br>
-                            <input type="text" id = "fcity">
-                        </label>
-                    </td>
-
-                    <td>
-                        <label for="fcountry">
-                            <strong>País</strong>
-                            <br>
-                            <input type="text" id = "fcountry">
-                        </label>
-                    </td>
-                </tr>
-
-            </table>
-            <br>
-            <input type="submit" value="Enviar">
-            
-        </p>
-
-
-    </form>
+        </form>
+    </div>
 </body>
 </html>
