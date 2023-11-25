@@ -1,0 +1,15 @@
+body{
+    font-weight: normal;
+}
+
+#caixa-externa{
+    background-color: rgb(179, 8, 156);
+    border: 10px rgb(179, 8, 156);
+}
+
+.caixa{
+    background-color: blue;
+}
+.caixa-interna{
+    background-color: rgb(179, 14, 8);
+}
