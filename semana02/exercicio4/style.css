@@ -1,15 +1,28 @@
 body{
     font-weight: normal;
+    margin: 0px;
+    border: 0px;
 }
 
-#caixa-externa{
-    background-color: rgb(179, 8, 156);
-    border: 10px rgb(179, 8, 156);
-}
 
 .caixa{
     background-color: blue;
+    padding: 6px;
+}
+#caixa-externa{
+    background-color: purple;
+    padding: 5px;
+    margin: 0px;
+    border: 0px;
 }
 .caixa-interna{
-    background-color: rgb(179, 14, 8);
+    background-color: red;
+    border: 0px;
+    padding: 0;
+}
+
+p{
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
 }
