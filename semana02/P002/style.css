@@ -1,9 +1,10 @@
 :root {
-    --main-bg-color: rgb(205, 205, 223);
-    --secondary-bg-color: #c8e7f6;
-    --box-bg-color: rgb(236, 242, 248);
+    --main-bg-color: #EAE9F0;
+    --secondary-bg-color: #C6DCF5;
+    --box-bg-color: #F2F9FF;
     --main-text-color: rgb(0, 0, 0);
     --border-color: rgba(240, 248, 255, 0.041);
+    --blue: #3e4095
 }
 
 
@@ -14,10 +15,10 @@ body{
     min-width: fit-content;
 }
 
-.wrapper{
+#wrapper{
     min-width: fit-content;
     padding: 10px 10px;
-    margin: 0 30px;
+    margin: 0 30px auto;
     background-color: var(--secondary-bg-color);
 }
 .container{
@@ -25,16 +26,17 @@ body{
     gap: 5px;
     border: 0;
     margin-bottom: 5px;
+    align-content: center;
+    min-width: fit-content;
+    justify-content: center;
 }
 
 .container1{
     grid-template-columns: 1fr 1fr 20%;
-    justify-content: center;
 }
 
 .container2{
     grid-template-columns: 1fr 400px;
-    justify-content: center;
 }
 
 .title{
@@ -43,7 +45,7 @@ body{
 
 footer{
     display: fixed;
-    border: 1px solid black;
+    padding: 4px 0px;
     text-align: center;
 
     font-family: 'Inter', sans-serif;
@@ -55,7 +57,7 @@ footer{
 
 header{
     text-align: center;
-    background-color: #3E4095;
+    background-color: var(--blue);
     border: 1px solid transparent;
 }
 
@@ -65,10 +67,11 @@ section{
     border-radius: 10px;
     padding: 10px;
     background-color: var(--box-bg-color);
+    overflow: auto;
 }
 
 #highlights img{
-    margin: 5px 10px;
+    margin-bottom: 10px;
     width: 100px;
     height: 100px;
 }
@@ -78,8 +81,12 @@ section{
 
 }
 
-#highlights{
-    min-width: fit-content;
+#services{
+    overflow: visible;
+}
+
+#highlights .title{
+    margin-bottom: 18.720px;
 }
 
 .content{
@@ -120,12 +127,23 @@ p, li, a{
     }
 
     #highlights img{
-        width:minmax(100px, 100%);
+        width:100%;
         margin-bottom: 10px;
     }
 
-    body{
-        padding: 0 7px;
+    #wrapper{
+        margin: 0;
+        padding: 10px 20px;
+
+    }
+
+    h1{
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    footer{
+        padding: 5px 0px;
     }
 }
 
