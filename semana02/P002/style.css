@@ -2,76 +2,9 @@
     --main-bg-color: #EAE9F0;
     --secondary-bg-color: #C6DCF5;
     --box-bg-color: #F2F9FF;
-    --main-text-color: rgb(0, 0, 10);
+    --main-text-color: #00000a;
     --blue: #3e4095;
     --yellow: #f7dc86;
-}
-
-
-body{
-    background-color: var(--main-bg-color);
-    margin: 0;
-    color: var(--main-text-color);
-    min-width: fit-content;
-}
-
-#wrapper{
-    min-width: fit-content;
-    padding: 10px 10px;
-    margin: 0 30px auto;
-    background-color: var(--secondary-bg-color);
-}
-.container{
-    display: grid;
-    gap: 5px;
-    border: 0;
-    margin-bottom: 5px;
-    align-content: center;
-    min-width: fit-content;
-    justify-content: center;
-}
-
-.container1{
-    grid-template-columns: 1fr 1fr 20%;
-}
-
-.container2{
-    grid-template-columns: 1fr 400px;
-}
-
-.title{
-    text-align:  center;
-}
-
-footer{
-    display: fixed;
-    padding: 4px 0px;
-    text-align: center;
-
-    font-family: 'Alumni Sans Pinstripe', sans-serif;
-
-    font-weight: bold;
-}
-
-header{
-    text-align: center;
-    background-color: var(--blue);
-    border: 1px solid transparent;
-
-    font-family: 'Noto Sans KR', sans-serif;
-}
-
-#header{
-    font-weight: 600;
-    
-}
-
-
-section{
-    border-radius: 3px;
-    padding: 10px;
-    background-color: var(--box-bg-color);
-    overflow: auto;
 }
 
 #highlights img{
@@ -93,8 +26,71 @@ section{
     margin-bottom: 18.720px;
 }
 
-.content{
-    border-top: var(--border-color);
+#wrapper{
+    min-width: fit-content;
+    padding: 10px 10px;
+    margin: 0 30px auto;
+    background-color: var(--secondary-bg-color);
+}
+
+#header{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 600; 
+}
+
+.container{
+    display: grid;
+    gap: 5px;
+    border: 0;
+    margin-bottom: 5px;
+    justify-content: center;
+}
+
+.container1{
+    grid-template-columns: 1fr 1fr 20%;
+}
+
+.container2{
+    grid-template-columns: 1fr 400px;
+}
+
+.title{
+    text-align:  center;
+}
+
+
+
+section{
+    border-radius: 3px;
+    padding: 10px;
+    background-color: var(--box-bg-color);
+    overflow: auto;
+}
+
+
+
+body{
+    background-color: var(--main-bg-color);
+    margin: 0;
+    color: var(--main-text-color);
+    min-width: fit-content;
+}
+
+footer{
+    display: fixed;
+    padding: 4px 0px;
+    text-align: center;
+
+    font-family: 'Alumni Sans Pinstripe', sans-serif;
+
+    font-weight: bold;
+}
+
+header{
+    text-align: center;
+    background-color: var(--blue);
+    border: 1px solid transparent;
+
 }
 
 a{
@@ -107,10 +103,14 @@ a:hover{
 }
 
 hr{
-    height: 1px; /* Altura do hr */
-    border: 0; /* Remove a borda padrão do hr */
-    background: linear-gradient(to right, var(--blue) 50%, var(--yellow)); /* Gradiente horizontal de vermelho para verde */
-    margin: 20px 0; /* Margem superior e inferior para espaçamento */
+    height: 1px;
+    border: 0; 
+    background: linear-gradient(to right, var(--blue) 50%, var(--yellow)); 
+    margin: 10px 0; 
+}
+
+h2, h3, h4, h5, h6{
+    font-family: 'Roboto', sans-serif;
 }
 
 h2{
@@ -120,17 +120,10 @@ h2{
 
 h3{
     font-weight: 400;
+    margin-bottom: 0;
 }
 
-h2, h3, h4, h5, h6{
-    font-family: 'Roboto', sans-serif;
-}
-
-p, li, a{
-    font-family: "Arial Narrow", Arial, sans-serif;
-}
-
-h3, h4{
+h4{
     margin-bottom: 0;
 }
 
@@ -139,12 +132,16 @@ h3, h4{
     font-weight: 400;
 }
 
+p, li, a{
+    font-family: "Arial Narrow", Arial, sans-serif;
+}
+
 p{
     margin-top: 5px;
 }
 
-#news h3{
-    margin-bottom: 0;
+li p{
+    padding-left: 10px;
 }
 
 ul{
@@ -152,9 +149,7 @@ ul{
     padding-inline-start: 20px;
 }
 
-li p{
-    padding-left: 10px;
-}
+
 /* Screens smaller than 500px */
 @media (max-width: 500px){
     .container1{
@@ -179,7 +174,6 @@ li p{
     #header{
         font-size: 1rem;
         font-weight: 500;
-        
     }
 
     footer{
