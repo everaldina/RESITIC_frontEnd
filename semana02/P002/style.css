@@ -102,6 +102,10 @@ a:hover{
     color: var(--yellow);
 }
 
+footer a{
+    font-family: 'Alumni Sans Pinstripe', sans-serif;
+}
+
 hr{
     height: 1px;
     border: 0; 
