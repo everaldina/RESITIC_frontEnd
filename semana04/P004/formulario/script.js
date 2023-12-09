@@ -1,30 +1,30 @@
 
 
 document.getElementById('formulario').addEventListener('submit', function(event) {
-    alert('Formulário enviado com sucesso!');
     event.preventDefault();
 
-    var nome = document.getElementsByName("local").value;
-    var imagem = document.getElementsByName("imagem").value;
+    var local = document.getElementsByName("local")[0].value;
+    var imagem = document.getElementsByName("imagem")[0].value;
     var itens = document.getElementsByName("item");
-    var preco = document.getElementsByName("preco").value;
-    var taxas = document.getElementsByName("taxas");
-    var parcelas = document.getElementsByName("parcelas").value;
+    var preco = document.getElementsByName("preco")[0].value;
+    var taxas = document.getElementsByName("taxas")[0].value;
+    var parcelas = document.getElementsByName("parcelas")[0].value;
 
 
     var container = document.getElementById("container");
+    container.classList.add("destination-card")
     container.style.display = 'flex'; 
 
     var roteiro = document.createElement("section");
 
     roteiro.innerHTML = `
         <img class = "flex-item destination-img" src="${imagem}"> 
-        <h2 class="flex-item destination-title">Destino de ${nome}</h2>
+        <h2 class="flex-item destination-title">${local}</h2>
         <div class="flex-item" id="package-itens">
-            <<ul>
-                <li>${itens[0].textContent}</li>
-                <li>${itens[1].textContent}</li>
-                <li>${itens[2].textContent}</li>
+            <ul>
+                <li>${itens[0].value}</li>
+                <li>${itens[1].value}</li>
+                <li>${itens[2].value}</li>
             </ul>
         </div>
         <div class="flex-item payment-info">
