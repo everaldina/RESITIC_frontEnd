@@ -21,6 +21,18 @@ class Dado{
     }
 }
 
+class Noticia{
+    title: string;
+    description: string;
+    url: string;
+
+    constructor(title: string, description: string, url: string){
+        this.title = title;
+        this.description = description;
+        this.url = url;
+    }
+}
+
 let dados: Dado[] = [];
 
 let api_tempo = "https://api.hgbrasil.com/weather?format=json-cors&woeid=455955&key=91076157";
@@ -32,7 +44,7 @@ fetch(api_tempo)
         const divSessao = sessaoServicos!.querySelector(".content");
 
         data.results.forecast.forEach(forecast => {
-            dados.push(forecast);
+            dados.push(new Dado(forecast.date, forecast.max, forecast.min, forecast.cloudiness, forecast.rain, forecast.rain_probability, forecast.description));
         });
 
         dados = dados.slice(0, 7);
@@ -63,8 +75,39 @@ let api_educacao = "https://newsapi.org/v2/everything?q=education&apiKey=78ce31b
 fetch(api_educacao)
     .then(response => response.json())
     .then(data => {
-        
+        let noticias: Noticia[] = [];
+
+        // pegando os artigos
+        let artigos = data.articles;
+        artigos.sort(() => Math.random() - 0.5); // embaralha os artigos
+        for (let i=0; i<6; i++){
+            let artigo = artigos[i];
+            noticias.push(new Noticia(artigo.title, artigo.description, artigo.url));
+        }
+
+        // colocando as noticias na pagina
+        const sessaoNoticias = document.getElementById("news");
+        const divSessaoNoticias = sessaoNoticias!.querySelector(".content");
+
+        const sessaoResultados = document.getElementById("results");
+        const divSessaoResultados = sessaoResultados!.querySelector(".content")?.querySelector("ul");
+        for (let i=0; i<6; i++){
+            if (i<3){
+                const link = document.createElement("a");
+                link.href = noticias[i].url;
+                link.innerHTML = ` <h3>${noticias[i].title}</h3>
+                                    <h4>${noticias[i].description}</h4>
+                                `;
+                divSessaoNoticias!.appendChild(link);
+            }else{
+                const lista = document.createElement("li");
+                lista.innerHTML = ` <a href="${noticias[i].url}"><h4>${noticias[i].title}</h4></a> 
+                                    <p>${noticias[i].description}</p>`;
+                divSessaoResultados!.appendChild(lista);
+            }
+        }
     })
     .catch(error => {
         console.error("Error:", error);
     });
+
