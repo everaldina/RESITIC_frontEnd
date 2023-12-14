@@ -153,6 +153,26 @@ ul{
     padding-inline-start: 20px;
 }
 
+#services > .content{
+    display: grid;
+    row-gap: 10px;
+    column-gap: 15px;
+    grid-template-columns: 100px 1fr;
+    justify-content: center;
+}
+
+.dia{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500; 
+    font-size: 30px;
+    color: var(--blue);
+    margin: auto 0;
+    text-align: right;
+}
+
+.previsao{
+    font-family: "Arial Narrow", Arial, sans-serif;
+}
 
 /* Screens smaller than 500px */
 @media (max-width: 500px){

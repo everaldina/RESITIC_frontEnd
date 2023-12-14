@@ -25,7 +25,7 @@ let dados: Dado[] = [];
 
 let api_tempo = "https://api.hgbrasil.com/weather?format=json-cors&woeid=455955&key=91076157";
 
-fetch(api_tempo,)
+fetch(api_tempo)
     .then(response => response.json())
     .then(data => {
         const sessaoServicos= document.getElementById("services");
@@ -35,14 +35,36 @@ fetch(api_tempo,)
             dados.push(forecast);
         });
 
+        dados = dados.slice(0, 7);
         dados.forEach(dado => {
-            const p = document.createElement("p");
-            p.innerHTML = `<strong>${dado.date}</strong> - ${dado.description} | Maximo: ${dado.max} | Minimo: ${dado.min} | probabilidade de chuva: ${dado.rain_probability}%<br>
-                            Volume de chuva previsto: ${dado.rain}mm - nebulosidade: ${dado.cloudiness}%<br>`;
-            divSessao!.appendChild(p);
+            const dia = document.createElement("div");
+            dia.classList.add("dia");
+            dia.innerHTML = `<h3 class="dia">${dado.date}</h3>`;
+            divSessao!.appendChild(dia);
+
+            const previsao = document.createElement("div");
+            previsao.classList.add("previsao");
+            previsao.innerHTML = ` ${dado.description} <br>
+                                    Maximo: ${dado.max} | Minimo: ${dado.min} <br> 
+                                   Probabilidade de chuva: ${dado.rain_probability}% <br> 
+                                    Volume de chuva previsto: ${dado.rain}mm <br> 
+                                    Nebulosidade: ${dado.cloudiness}%<br>
+                                `;
+            divSessao!.appendChild(previsao);
         });
     })
     .catch(error => {
         console.error("Error:", error);
     });
 
+// educacao
+let api_educacao = "https://newsapi.org/v2/everything?q=education&apiKey=78ce31bd656b4fc2b08b42ed839f6665";
+
+fetch(api_educacao)
+    .then(response => response.json())
+    .then(data => {
+        
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });

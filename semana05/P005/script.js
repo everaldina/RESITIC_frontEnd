@@ -22,12 +22,20 @@ fetch(api_tempo)
     data.results.forecast.forEach(function (forecast) {
         dados.push(forecast);
     });
+    dados = dados.slice(0, 7);
     dados.forEach(function (dado) {
-        var p = document.createElement("p");
-        p.innerHTML = "<strong>".concat(dado.date, "</strong> - ").concat(dado.description, " | Maximo: ").concat(dado.max, " | Minimo: ").concat(dado.min, " | probabilidade de chuva: ").concat(dado.rain_probability, "%<br>\n                            Volume de chuva previsto: ").concat(dado.rain, "mm - nebulosidade: ").concat(dado.cloudiness, "%<br>");
-        divSessao.appendChild(p);
+        var dia = document.createElement("div");
+        dia.classList.add("dia");
+        dia.innerHTML = "<h3 class=\"dia\">".concat(dado.date, "</h3>");
+        divSessao.appendChild(dia);
+        var previsao = document.createElement("div");
+        previsao.classList.add("previsao");
+        previsao.innerHTML = " ".concat(dado.description, " <br>\n                                    Maximo: ").concat(dado.max, " | Minimo: ").concat(dado.min, " <br> \n                                   Probabilidade de chuva: ").concat(dado.rain_probability, "% <br> \n                                    Volume de chuva previsto: ").concat(dado.rain, "mm <br> \n                                    Nebulosidade: ").concat(dado.cloudiness, "%<br>\n                                ");
+        divSessao.appendChild(previsao);
     });
 })
     .catch(function (error) {
     console.error("Error:", error);
 });
+// educacao
+var api_educacao = "https://newsapi.org/v2/everything?q=education&apiKey=78ce31bd656b4fc2b08b42ed839f6665";
