@@ -1,0 +1,189 @@
+:root {
+    --main-bg-color: #EAE9F0;
+    --secondary-bg-color: #C6DCF5;
+    --box-bg-color: #F2F9FF;
+    --main-text-color: #00000a;
+    --blue: #3e4095;
+    --yellow: #f7dc86;
+}
+
+#highlights img{
+    margin-bottom: 10px;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+
+#highlights .content{
+    text-align: center;
+}
+
+#services{
+    overflow: visible;
+}
+
+#highlights .title{
+    margin-bottom: 18.720px;
+}
+
+#wrapper{
+    min-width: fit-content;
+    padding: 10px 10px;
+    margin: 0 30px auto;
+    background-color: var(--secondary-bg-color);
+}
+
+#header{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 600; 
+}
+
+.container{
+    display: grid;
+    gap: 5px;
+    border: 0;
+    margin-bottom: 5px;
+    justify-content: center;
+}
+
+.container1{
+    grid-template-columns: 1fr 1fr 20%;
+}
+
+.container2{
+    grid-template-columns: 1fr 400px;
+}
+
+.title{
+    text-align:  center;
+}
+
+
+
+section{
+    border-radius: 3px;
+    padding: 10px;
+    background-color: var(--box-bg-color);
+    overflow: auto;
+}
+
+
+
+body{
+    background-color: var(--main-bg-color);
+    margin: 0;
+    color: var(--main-text-color);
+    min-width: fit-content;
+}
+
+footer{
+    display: fixed;
+    padding: 4px 0px;
+    text-align: center;
+
+    font-family: 'Alumni Sans Pinstripe', sans-serif;
+
+    font-weight: bold;
+}
+
+header{
+    text-align: center;
+    background-color: var(--blue);
+    border: 1px solid transparent;
+
+}
+
+a{
+    color: var(--blue);
+    text-decoration: none;
+}
+
+a:hover{
+    color: var(--yellow);
+}
+
+footer a{
+    font-family: 'Alumni Sans Pinstripe', sans-serif;
+}
+
+hr{
+    height: 1px;
+    border: 0; 
+    background: linear-gradient(to right, var(--blue) 50%, var(--yellow)); 
+    margin: 10px 0; 
+}
+
+h2, h3, h4, h5, h6{
+    font-family: 'Roboto', sans-serif;
+}
+
+h2{
+    margin: 0px;
+    font-weight: 100;
+}
+
+h3{
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+h4{
+    margin-bottom: 0;
+}
+
+#news h4{
+    margin-top: 4px;
+    font-weight: 400;
+}
+
+p, li, a{
+    font-family: "Arial Narrow", Arial, sans-serif;
+}
+
+p{
+    margin-top: 5px;
+}
+
+li p{
+    padding-left: 10px;
+}
+
+ul{
+    list-style-type: circle;
+    padding-inline-start: 20px;
+}
+
+
+/* Screens smaller than 500px */
+@media (max-width: 500px){
+    .container1{
+        grid-template-columns: 1fr;
+    }
+    
+    .container2{
+        grid-template-columns: 1fr;
+    }
+
+    #highlights img{
+        width:100%;
+        margin-bottom: 10px;
+    }
+
+    #wrapper{
+        margin: 0;
+        padding: 10px 20px;
+
+    }
+    
+    #header{
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    footer{
+        padding: 5px 0px;
+    }
+}
+
+
+
