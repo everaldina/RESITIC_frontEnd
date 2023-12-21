@@ -1,0 +1,31 @@
+:root {
+    --main-bg-color: #EAE9F0;
+    --secondary-bg-color: #C6DCF5;
+    --box-bg-color: #F2F9FF;
+    --main-text-color: #00000a;
+    --blue: #3e4095;
+    --yellow: #f7dc86;
+}
+
+#wrapper{
+    min-width: fit-content;
+    padding: 10px 10px;
+    margin: 0 30px auto;
+    background-color: var(--secondary-bg-color);
+}
+
+.container{
+    display: grid;
+    gap: 5px;
+    border: 0;
+    margin-bottom: 5px;
+    justify-content: center;
+}
+
+.container1{
+    grid-template-columns: 1fr 1fr 20%;
+}
+
+.container2{
+    grid-template-columns: 1fr 400px;
+}

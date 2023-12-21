@@ -1,0 +1,6 @@
+hr{
+    height: 1px;
+    border: 0; 
+    background: linear-gradient(to right, var(--blue) 50%, var(--yellow)); 
+    margin: 10px 0; 
+}
