@@ -10,6 +10,7 @@ import { ResultadosComponent } from './components/resultados/resultados.componen
 import { LinhaComponent } from './components/linha/linha.component';
 import { BoxComponent } from './components/box/box.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MenuComponent } from './components/menu/menu.component';
     ResultadosComponent,
     LinhaComponent,
     BoxComponent,
-    MenuComponent
+    MenuComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

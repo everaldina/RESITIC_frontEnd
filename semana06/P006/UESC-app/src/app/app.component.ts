@@ -10,7 +10,7 @@ import { Noticia } from './Noticia';
 export class AppComponent {
   title = 'UESC-app';
 
-  noticias: Noticia[] = this.fetchNoticias();
+  noticias = this.fetchNoticias();
 
   fetchNoticias() : Noticia[]{
     let API = "https://newsapi.org/v2/everything?q=education&apiKey=78ce31bd656b4fc2b08b42ed839f6665";

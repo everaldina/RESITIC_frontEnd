@@ -1,0 +1,10 @@
+header{
+    text-align: center;
+    background-color: var(--blue);
+    border: 1px solid transparent;
+}
+
+h1{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 600;
+}
