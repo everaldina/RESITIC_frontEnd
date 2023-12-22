@@ -11,6 +11,7 @@ import { LinhaComponent } from './components/linha/linha.component';
 import { BoxComponent } from './components/box/box.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HeaderComponent } from './components/header/header.component';
     LinhaComponent,
     BoxComponent,
     MenuComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

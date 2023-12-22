@@ -1,3 +1,12 @@
 section{
     background-color: var(--box-bg-color);
+    padding: 10px;
+    border-radius: 3px;
+    overflow: auto;
+}
+
+h2{
+    font-weight: 100;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
 }

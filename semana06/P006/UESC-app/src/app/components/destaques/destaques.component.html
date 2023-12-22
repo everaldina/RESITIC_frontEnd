@@ -1,1 +1,3 @@
-<app-box [title] = title></app-box>
+<app-box [title] = title>
+    <img *ngFor="let imagem of imagens" [src]="imagem.url">
+</app-box>

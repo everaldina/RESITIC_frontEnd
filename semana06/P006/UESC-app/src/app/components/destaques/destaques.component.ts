@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './destaques.component.css'
 })
 export class DestaquesComponent {
-  title = "destaque"
+  title = "Destaques"
+  imagens = [
+    {url: "assets/img/amarelo.jpg", descricao: "Imagem 1"},
+    {url: "assets/img/azul.jpg", descricao: "Imagem 2"},
+  ]
 }
