@@ -1,0 +1,23 @@
+<div class = "content">
+    <div id = "load">
+        <input type="file" (change)="onFileSelected($event)" accept=".json">
+    </div>
+    <div id = "vehicle">
+        <section class = "selector">
+            <app-classes></app-classes>
+            <app-objetos [name] = "name_obejct"></app-objetos>
+            <app-propriedades [name] = "name_prop"></app-propriedades>
+        </section>
+        <section class = "result">
+            <app-valor-propriedade></app-valor-propriedade>
+        </section>
+        <section class = "add">
+            <app-button>
+                Adicionar
+            </app-button>
+        </section>
+    </div>
+    <div id = "data">
+        <app-carrinho></app-carrinho>
+    </div>
+</div>
