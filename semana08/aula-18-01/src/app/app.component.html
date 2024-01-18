@@ -1,0 +1,20 @@
+<!-- Exemplo de uso do pipe cpfPipe -->
+<h3>{{"12332111122" | cpfPipe}}</h3>
+
+<hr>
+
+<!-- Exemplo de service-->
+<table>
+    <thead>
+        <tr>
+            <th>Pais</th>
+            <th>Pppulacao</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pais of paises">
+            <td>{{pais.nome}}</td>
+            <td>{{pais.populacao}}</td>
+        </tr>
+    </tbody>
+</table>
