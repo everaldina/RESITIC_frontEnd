@@ -8,13 +8,13 @@
     <thead>
         <tr>
             <th>Pais</th>
-            <th>Pppulacao</th>
+            <th>Populacao</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let pais of paises">
             <td>{{pais.nome}}</td>
-            <td>{{pais.populacao}}</td>
+            <td>{{pais.populacao | number}}</td>
         </tr>
     </tbody>
 </table>
