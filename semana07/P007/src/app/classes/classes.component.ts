@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-classes',
@@ -8,4 +8,9 @@ import { Component, Input} from '@angular/core';
 export class ClassesComponent {
   name: string = 'Categoria';
   @Input() categories: string[] = [];
+  @Output() categoriaSelecionada = new EventEmitter<string>();
+
+  handleSelected(string: string) {
+    this.categoriaSelecionada.emit(string);
+  }
 }

@@ -9,8 +9,11 @@ export class AppComponent {
   title = 'P007';
   classes: string[] = [];
   jsonContent: any;
-  name_obejct: string = 'objetos';
-  name_prop: string = 'propriedades';
+  name_obejct: string = 'Objetos';
+  name_prop: string = 'Propriedades';
+  veiculo_list: string[] = [];
+  valor: string = '';
+  
 
   // funcao para ler arquivo
   onFileSelected(event: any): void {
@@ -40,33 +43,47 @@ export class AppComponent {
   }
 
   // funcao para pegar objetos
+  get_object_names(category: string): any[] {
+    return this.jsonContent[category].map((obj: any) => obj.Name);
+  }
+
   get_object(category: string): any[] {
-    if (category in this.classes) {
-      return this.jsonContent[category];
-    }else{
-      return [];
-    }
+    return this.jsonContent[category];
   }
 
   // funcao para pegar propriedades
-  get_prop(category: string, name: string): any[] {
+  get_prop(category: string, name: string, prop: string): string {
     const obj_list = this.get_object(category); 
-
+    console.log(obj_list);
     if (obj_list.length > 0) {
-     obj_list.find((obj: any) => {
-        if (obj.Name === name) {
-          return obj;
-        }
-     });
+      const obj = obj_list.find((o: any) => o.Name === name);
+      console.log(obj);
+      console.log(prop);
+      console.log(obj[prop]);
+      console.log(obj.prop);
+      console.log(obj[prop].toString());
+      if (obj) {
+        return obj[prop];
+      }
     }
-    return [];
-  }
-
-  // funcao para pegar valor
-  get_value(category: string, name: string, prop: string): any {
-    const obj: object = this.get_prop(category, name);
     return '';
   }
+
+  handleCategoria(categoria: string) {
+    this.name_obejct = categoria;
+    this.veiculo_list = this.get_object_names(categoria);
+  }
+
+  handleVeiculo(veiculo: string) {
+    this.name_prop = veiculo;
+  }
+
+  handlePropriedade(propriedade: string) {
+    this.valor = this.get_prop(this.name_obejct, this.name_prop, propriedade);
+    console.log(this.valor);
+  }
+
+  
 
 
 

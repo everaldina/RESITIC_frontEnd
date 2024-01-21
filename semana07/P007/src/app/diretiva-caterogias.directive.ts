@@ -1,10 +1,11 @@
-import { Directive, ElementRef, Input, Renderer2, ViewContainerRef } from '@angular/core';
+import { Directive, ElementRef, Input, Renderer2, ViewContainerRef, Output, EventEmitter } from '@angular/core';
 import { ButtonComponent } from './button/button.component';
 
 @Directive({
   selector: '[appDiretivaCaterogias]'
 })
 export class DiretivaCaterogiasDirective {
+  @Output() select = new EventEmitter<string>();
 
   constructor(private elementRef: ElementRef, private renderer: Renderer2, private viewContainer: ViewContainerRef) { }
 
@@ -14,9 +15,16 @@ export class DiretivaCaterogiasDirective {
 
   private renderizadorCategorias(categorias: string[]) {
     categorias.forEach(categoria => {
+      // cria um elemento button
       const component = this.viewContainer.createComponent(ButtonComponent);
   
-      component.instance.text = categoria;
+      component.instance.text = categoria; // muda o texto do botão
+
+      // adiciona um listener de evento de clique
+      this.renderer.listen(component.location.nativeElement, 'click', () => {
+        this.select.emit(categoria);
+      });
+
       this.renderer.appendChild(this.elementRef.nativeElement, component.location.nativeElement);
 
     });

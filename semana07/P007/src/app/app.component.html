@@ -4,17 +4,16 @@
     </div>
     <div id = "vehicle">
         <section class = "selector">
-            <app-classes [categories]="classes"></app-classes>
-            <app-objetos [name] = "name_obejct"></app-objetos>
-            <app-propriedades [name] = "name_prop"></app-propriedades>
+            <app-classes [categories]="classes" (categoriaSelecionada) = "handleCategoria($event)"></app-classes>
+            <app-objetos [name] = "name_obejct" [objetos]="veiculo_list" (objetoSelecionado)="handleVeiculo($event)"></app-objetos>
+            <app-propriedades [name] = "name_prop" (propSelecionada) = "handlePropriedade($event)"></app-propriedades>
         </section>
         <section class = "result">
-            <app-valor-propriedade></app-valor-propriedade>
+            <app-valor-propriedade [value] = "valor"></app-valor-propriedade>
         </section>
         <section class = "add">
-            <app-button>
-                Adicionar
-            </app-button>
+            <!--button (click) = "addCarrinho()">Adicionar</button-->
+            <button>Adicionar</button>
         </section>
     </div>
     <div id = "data">

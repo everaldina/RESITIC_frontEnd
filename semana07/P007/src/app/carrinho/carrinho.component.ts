@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './carrinho.component.css'
 })
 export class CarrinhoComponent {
+  carrinho: any[] = [];
+  
+
+  addItem(item: any) {
+    this.carrinho.push(item);
+  }
 
 }
