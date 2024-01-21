@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './label.component.css'
 })
 export class LabelComponent {
-  @Input() text: string = '';
+  @Input() text: string = 'tete';
 }
