@@ -1,0 +1,7 @@
+<h2>Consultando a wiki API</h2>
+<input type="text" placeholder="Digite busca..." #search_field>
+<button (click) = "search(search_field.value)">Buscar</button>
+<ng-template id="results" [ngIf] = "search_field.value != ''">
+  <h3>Resultado para {{search_field.value}}</h3>
+  <app-result *ngFor = "let artigo of artigos" [title] = artigo.title [intro] = artigo.snippet></app-result>
+</ng-template>
