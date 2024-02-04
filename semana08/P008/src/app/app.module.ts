@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { ResultComponent } from './components/result/result.component';
 
 import { FormsModule } from '@angular/forms';
+import { HighlightPipe } from './highlight.pipe';
+import { ContinuePipe } from './continue.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ResultComponent
+    ResultComponent,
+    HighlightPipe,
+    ContinuePipe
   ],
   imports: [
     BrowserModule,
