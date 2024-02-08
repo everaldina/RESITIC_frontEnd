@@ -1,0 +1,27 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label for="estacao">
+        Nome da estação:
+        <input type="text" name="estacao" formControlName="estacao">
+    </label>
+    <br>
+    <label for="email">
+        E-mail:
+        <input type="email" name="email" formControlName="email_notificacao">
+    </label>
+    <br>
+    <label for="localizacoa">
+        Localização:
+        <input type="text" name="localizacao" formControlName="localizacao">
+    </label>
+    <br>
+    <label for="status_instalacao">
+        Status da instalação:
+        <select name="status_instalacao" formControlName="status_instalacao">
+            <option value="not_installed">Não instalada</option>
+            <option value="installed">Instalada</option>
+            <option value="operanting">Operante</option>
+        </select>
+    </label>
+    <br>
+    <button type="submit">Enviar</button>
+</form>
