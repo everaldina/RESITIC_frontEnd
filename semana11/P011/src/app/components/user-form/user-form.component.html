@@ -1,0 +1,33 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <label for="username">
+        Nome de usuario
+        <input type="text" formControlName="username" placeholder="Nome de usuario">
+    </label>
+    <label for="password">
+        Senha
+        <input type="password" formControlName="password" placeholder="Senha">
+    </label>
+    <label for="email">
+        Email
+        <input type="email" formControlName="email" placeholder="Email">
+    </label>
+    <label for="full_name">
+        Nome completo
+        <input type="text" formControlName="full_name" placeholder="Nome completo">
+    </label>
+    <label for="number">
+        Numero
+        <input type="number" formControlName="number" placeholder="Numero">
+    </label>
+    <label for="date">
+        Data
+        <input type="date" formControlName="birthdate" placeholder="Data">
+    </label>
+    <label for="gender">
+        Genero
+    </label>
+    <label for="occupation">
+        Ocupação
+        <input type="text" formControlName="occupation" placeholder="Ocupação">
+    </label>
+</form>
