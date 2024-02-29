@@ -8,17 +8,20 @@ import { FormCadastroComponent } from './components/form-cadastro/form-cadastro.
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppointmentListComponent } from './components/appointment-list/appointment-list.component';
 import { Routes, RouterModule } from '@angular/router';
+import { DetalheComponent } from './components/detalhe/detalhe.component';
 
 const rotasApp: Routes = [
   { path: 'cadastro', component: FormCadastroComponent },
-  { path: 'lista', component: AppointmentListComponent }
+  { path: 'lista', component: AppointmentListComponent },
+  { path: 'detalhe/:id', component: DetalheComponent },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     FormCadastroComponent,
-    AppointmentListComponent
+    AppointmentListComponent,
+    DetalheComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 export interface Atendimento {
+    id: number;
     appointment_day: Date; 
     tutor_name: string;
     pet_name: string;

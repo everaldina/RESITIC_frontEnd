@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../../services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-appointment-list',
@@ -9,7 +10,14 @@ import { DataService } from '../../services/data.service';
 export class AppointmentListComponent {
   listaAtendimentos = this.dataService.getAtendimentos();
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private rota: Router) { }
+
+  detalharAtendimento(id: number) {
+    console.log(id);
+    this.rota.navigate(['/detalhe', id]);
+  }
+
+
 
 
 }

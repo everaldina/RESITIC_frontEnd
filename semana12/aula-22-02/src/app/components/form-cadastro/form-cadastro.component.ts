@@ -24,7 +24,9 @@ export class FormCadastroComponent implements OnInit{
   ngOnInit(): void {}
 
   onSubmit() {
-    this.dataService.addAtendimento(this.form.value);
+    const dados = this.form.value;
+    dados.id = this.dataService.getAtendimentos().length + 1;
+    this.dataService.addAtendimento(dados);
     this.form.reset();
   }
 

@@ -5,6 +5,9 @@
         <span> Tutor: {{ atendimento.tutor_name }} </span>
         <span> | </span>
         <span> Pet: {{ atendimento.pet_name }} </span>
+        <button (click)="detalharAtendimento(atendimento.id)">Detalhar</button>
+        <router-outlet></router-outlet>
     </section>
+    <button>Editar</button>
 </div>
 
