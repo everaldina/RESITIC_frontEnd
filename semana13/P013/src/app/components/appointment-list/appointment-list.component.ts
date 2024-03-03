@@ -8,7 +8,7 @@ import { AppointmentDataService } from '../../appointment-data.service'
   styleUrl: './appointment-list.component.css'
 })
 export class AppointmentListComponent {
-  listaAtendimentos = this.dataService.getAtendimentos();
+  listaAtendimentos: any[] = [];
   detailShown: number | null = null;
 
   constructor(private dataService: AppointmentDataService, private rota: Router) { }
@@ -18,6 +18,25 @@ export class AppointmentListComponent {
       this.detailShown = id;
     else
       this.detailShown = null;
+  }
+
+  editAppointment(id: number) {
+    this.rota.navigate(['/edit', id]);
+  }
+
+  ngOnInit() {
+    // pegando os atendimentos
+    this.dataService.getAtendimentos().subscribe(
+      {
+        next: (response) => {
+          this.listaAtendimentos = response;
+        },
+        error: (error) => {
+          console.log(error);
+        }
+      }
+    );
+
   }
 
 

@@ -7,7 +7,7 @@ import { AppointmentListComponent } from './components/appointment-list/appointm
 import { DetailsComponent } from './components/details/details.component';
 import { FormComponent } from './components/form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 
 const rotasApp: Routes = [
@@ -28,7 +28,8 @@ const rotasApp: Routes = [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(rotasApp)
+    RouterModule.forRoot(rotasApp),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

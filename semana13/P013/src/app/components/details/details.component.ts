@@ -15,7 +15,16 @@ export class DetailsComponent {
   constructor(private dataService: AppointmentDataService, private route: ActivatedRoute) { }
   
   ngOnInit() {
-    this.atendimento = this.dataService.getAtendimento(this.atendimentoID);
+    this.dataService.getAtendimento(this.atendimentoID).subscribe(
+      {
+        next: (response) => {
+          this.atendimento = response;
+        },
+        error: (error) => {
+          console.log(error);
+        }
+      }
+    );
   }
   
 }

@@ -7,7 +7,7 @@
         <span> Pet: {{ atendimento.pet_name }} </span>
 
         <app-details *ngIf = 'detailShown && atendimento.id === detailShown' [atendimentoID] = 'detailShown'></app-details>
+        <button (click) = 'editAppointment(atendimento.id)'>Editar</button>
     </section>
-    <button>Editar</button>
 </div>
 

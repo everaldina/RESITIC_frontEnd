@@ -25,7 +25,6 @@ export class FormComponent {
 
   onSubmit() {
     const dados = this.form.value;
-    dados.id = this.dataService.getAtendimentos().length + 1;
     this.dataService.addAtendimento(dados);
     this.form.reset();
   }
