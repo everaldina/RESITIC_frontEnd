@@ -1,5 +1,5 @@
 export interface Appointment {
-    id: number;
+    id: string;
     appointment_day: Date; 
     tutor_name: string;
     pet_name: string;

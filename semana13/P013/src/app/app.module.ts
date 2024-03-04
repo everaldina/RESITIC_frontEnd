@@ -14,6 +14,7 @@ const rotasApp: Routes = [
   { path: 'cadastro', component: FormComponent },
   { path: 'lista', component: AppointmentListComponent },
   { path: 'detalhe/:id', component: DetailsComponent },
+  { path: 'editar/:id', component: FormComponent }
 ];
 
 

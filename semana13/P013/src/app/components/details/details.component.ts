@@ -9,10 +9,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './details.component.css'
 })
 export class DetailsComponent {
-  @Input() atendimentoID: number = 0;
+  @Input() atendimentoID: string = '';
   atendimento: Appointment = {} as Appointment;
 
-  constructor(private dataService: AppointmentDataService, private route: ActivatedRoute) { }
+  constructor(private dataService: AppointmentDataService) { }
   
   ngOnInit() {
     this.dataService.getAtendimento(this.atendimentoID).subscribe(

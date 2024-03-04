@@ -10,8 +10,7 @@ import { retry, catchError } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class AppointmentDataService {
-  endpoint = 'https://p013-1bbb3-default-rtdb.firebaseio.com/appointments';
-  id: number = 0;
+  endpoint = 'https://p013-1bbb3-default-rtdb.firebaseio.com';
   constructor(private http: HttpClient) {}
 
   httpOptions = {
@@ -20,10 +19,8 @@ export class AppointmentDataService {
 
 
   addAtendimento(atendimento: Appointment) {
-    atendimento.id = this.id;
-    this.id++;
     this.http
-      .post(this.endpoint + `/${atendimento.id}`, atendimento)
+      .post(this.endpoint + '/appointments.json', atendimento)
       .subscribe((response) => {
         console.log(response);
       });
@@ -31,20 +28,20 @@ export class AppointmentDataService {
 
   getAtendimentos(): Observable<Appointment[]>{
     return this.http
-      .get<Appointment[]>(this.endpoint)
+      .get<Appointment[]>(this.endpoint + '/appointments.json')
       .pipe(retry(2), catchError(this.handleError));
   }
 
-  getAtendimento(id: number): Observable<Appointment> {
+  getAtendimento(id: string): Observable<Appointment> {
     return this.http
-      .get<Appointment>(this.endpoint + `/${id}`)
+      .get<Appointment>(this.endpoint + `/appointments/${id}.json`)
       .pipe(retry(2), catchError(this.handleError));
   }
 
-  updateAtendimento(app: Appointment): Observable<Appointment> {
+  updateAtendimento(app: Appointment) {
     return this.http
-      .put<Appointment>(this.endpoint + `/${app.id}`, JSON.stringify(app), this.httpOptions)
-      .pipe(retry(1), catchError(this.handleError));
+      .put<Appointment>(this.endpoint + `/appointments/${app.id}.json`, app, this.httpOptions)
+      .pipe(retry(1), catchError(this.handleError))
   }
 
   handleError(error: HttpErrorResponse) {

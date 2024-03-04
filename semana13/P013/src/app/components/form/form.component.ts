@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { AppointmentDataService } from '../../appointment-data.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+import { ActivatedRoute, Router } from '@angular/router';
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -9,8 +11,10 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class FormComponent {
   form: FormGroup;
+  editMode = false;
+  appointmentId = '';
 
-  constructor(private dataService: AppointmentDataService) { 
+  constructor(private dataService: AppointmentDataService, private route: ActivatedRoute, private rotas: Router) { 
     this.form = new FormGroup({
       'appointment_day': new FormControl(null, [Validators.required]),
       'tutor_name': new FormControl(null, [Validators.required]),
@@ -21,12 +25,37 @@ export class FormComponent {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.route.url.subscribe(params => {
+      if (params[0].path === 'editar') {
+        this.editMode = true;
+        this.appointmentId = params[1].path;
+      }
+    });
+  }
 
   onSubmit() {
     const dados = this.form.value;
-    this.dataService.addAtendimento(dados);
-    this.form.reset();
+    if (this.editMode) {
+      dados.id = this.appointmentId;
+      this.editMode = false;
+      this.appointmentId = '';
+      this.dataService.updateAtendimento(dados).subscribe(
+        {
+          next: (response) => {
+            console.log(response);
+            this.form.reset();
+            this.rotas.navigate(['/lista']);
+          },
+          error: (error) => {
+            console.log(error);
+          }
+        }
+      );
+    }else{
+      this.dataService.addAtendimento(dados);
+      this.form.reset();
+    }
   }
 
 }
