@@ -1,0 +1,37 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label *ngIf= "!logginIn" for="name">
+        Nome Completo:
+        <input type="text" name="name" formControlName="name">
+        <span class="error" *ngIf="form.get('name')?.invalid && form.get('name')?.touched">Nome inválido</span>
+    </label>
+    <label *ngIf= "!logginIn" for="email">
+        Email:
+        <input type="email" name="email" formControlName="email">
+        <span class="error" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">Email inválido</span>
+    </label>
+    <br>
+    <label for="username">
+        Username:
+        <input type="text" name="username" formControlName="username">
+        <span class="error" *ngIf="form.get('username')?.invalid && form.get('username')?.touched">Username inválido</span>
+    </label>
+    <br>
+    <label for="password">
+        Senha:
+        <input type="password" name="password" formControlName="password">
+        <span class="error" *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+            Minimo de 6 caracteres
+            Maximo de 20 caracteres
+        </span>
+    </label>
+    <br>
+    <label *ngIf= "!logginIn" for="confirmPassword">
+        Confirmar senha:
+        <input type="password" name="confirmPassword" formControlName="confirmPassword">
+        <span class="error" *ngIf="form.get('confirmPassword')?.invalid && form.get('confirmPassword')?.touched">Senha invalida</span>
+        <span class="error" *ngIf="form.get('confirmPassword') != form.get('password') && form.get('confirmPassword')?.touched">Senhas não conferem</span>
+    </label>
+    <br>
+    <app-button-styled type="submit"> {{ logginIn ? 'Login' : 'Sign up' }}</app-button-styled>
+</form>
+

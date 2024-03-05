@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,21 +10,18 @@ export class AppComponent {
   title = 'P014';
   logged: boolean = false;
 
+  constructor(private router: Router){
+  }
+
   login(){
-    if (!this.logged)
-      this.logged = true;
-    else
-      return;
+    this.router.navigate(['/login']);
   }
 
   logout(){
-    if (this.logged)
-      this.logged = false;
-    else
-      return;
+    this.logged = false;
   }
 
   signUp(){
-    this.logged = !this.logged
+    this.router.navigate(['/signup']);
   }
 }

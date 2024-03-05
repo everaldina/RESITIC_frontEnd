@@ -21,6 +21,7 @@ const rotasApp: Routes = [
   { path: 'detalhe/:id', component: DetailsComponent },
   { path: 'editar/:id', component: FormComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'signup', component: LoginComponent },
   { path: '', redirectTo: '/lista', pathMatch: 'full' }
 ];
 
