@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { AppointmentDataService } from '../../appointment-data.service';
+import { AppointmentDataService } from '../../services/appointment-data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 

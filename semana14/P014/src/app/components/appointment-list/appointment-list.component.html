@@ -9,6 +9,6 @@
     
             <app-details *ngIf = 'detailShown && atendimento.id === detailShown' [atendimentoID] = 'detailShown'></app-details>
         </div>
-        <button (click) = 'editAppointment(atendimento.id)'>Editar</button>
+        <app-button-styled (click) = 'editAppointment(atendimento.id)'>Editar</app-button-styled>
     </section>
 </div>

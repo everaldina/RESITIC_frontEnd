@@ -1,0 +1,50 @@
+
+*{
+    color: black;
+}
+
+#navbar{
+    display: grid;
+    grid-template-columns: 80% 10px 1fr;
+    padding: 15px 0;
+    background-color: rgb(255, 162, 55);
+}
+
+#menu{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center
+}
+
+#menu a{
+    margin: 0 40px;
+    text-decoration: none;
+}
+
+#login{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+#content{
+    margin: 0 auto;
+    padding: 20px;
+    width: 75%;
+    background-color: white;
+}
+
+footer{
+    background-color: rgb(255, 162, 55);
+    text-align: center;
+}
+
+#wrapper{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    background-color: #e8ecf0;
+}

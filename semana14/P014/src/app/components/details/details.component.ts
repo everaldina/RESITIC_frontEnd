@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Input } from '@angular/core';
 import { Appointment } from '../../appointment';
-import { AppointmentDataService } from '../../appointment-data.service';
+import { AppointmentDataService } from '../../services/appointment-data.service';
 
 
 @Component({
