@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,13 +14,12 @@ export class LoginComponent {
   editMode = false;
   appointmentId = '';
 
-  constructor(private route: ActivatedRoute) { 
+  constructor(private route: ActivatedRoute, private router: Router) { 
     this.form = new FormGroup({
       'name': new FormControl(null, [this.signUpMode.bind(this), Validators.maxLength(100)]),
       'email': new FormControl(null, [this.signUpMode.bind(this), Validators.email]),
-      'username': new FormControl(null, [Validators.required, Validators.minLength(6), Validators.maxLength(20)]),
       'password': new FormControl(null, [Validators.required, Validators.minLength(6), Validators.maxLength(20)]),
-      'confirmPassword': new FormControl(null, [this.signUpMode.bind(this), Validators.minLength(6), Validators.maxLength(20)]),
+      'confirmPassword': new FormControl(null, [this.signUpMode.bind(this), this.equalPasswords.bind(this), Validators.minLength(6), Validators.maxLength(20)]),
     });
   }
 
@@ -43,17 +42,22 @@ export class LoginComponent {
     return null;
   }
 
-  
+  equalPasswords(control: AbstractControl): {[key:string]: boolean} | null{
+    const confirmPassword = control.value;
+    const password = control.root.get('password')?.value
+
+    if (password !== confirmPassword){
+      return {'notEqual': true};
+    }
+    return null;
+  }
 
   
 
   onSubmit() {
-    if (this.form.invalid) {
-      return;
-    }else if(this.logginIn){
-      // fazer login
-    }else{
-      // fazer cadastro
+    if (this.form.valid){
+      // logica para logar ou cadastrar
+      this.router.navigate(['/lista']);
     }
   }
 
