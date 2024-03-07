@@ -18,6 +18,7 @@ interface AuthResposeData {
 
 export class AuthService {
   usuario = new BehaviorSubject<Usuario>(new Usuario('', '', '', new Date()));
+  loggedIn = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient) { }
 
@@ -38,6 +39,7 @@ export class AuthService {
         );
 
         this.usuario.next(usuario);
+        this.loggedIn.next(true);
         localStorage.setItem('userData', JSON.stringify(usuario));
       })
    );
@@ -59,6 +61,7 @@ export class AuthService {
           expiracaoData
         );
         this.usuario.next(usuario);
+        this.loggedIn.next(true);
         localStorage.setItem('userData', JSON.stringify(usuario));
     }),
    );
@@ -85,12 +88,17 @@ export class AuthService {
 
     if(loadedUser.token) {
       this.usuario.next(loadedUser);
+      this.loggedIn.next(true);
     }
 
   }
 
   logout() {
+    this.loggedIn.next(false); 
     this.usuario.next(new Usuario('', '', '', new Date()));
+  }
 
+  isLogged(): boolean {
+    return this.usuario.value.token != null;
   }
 }

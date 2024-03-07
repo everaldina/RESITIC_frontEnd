@@ -9,20 +9,25 @@ import { FormComponent } from './components/form/form.component';
 
 import { Router, Routes, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { VerticalLineComponent } from './components/vertical-line/vertical-line.component';
 import { ButtonStyledComponent } from './components/button-styled/button-styled.component';
+import { activateGuard } from './activate.guard';
+import { deactivateGuard } from './deactivate.guard';
+import { HeaderComponent } from './components/header/header.component';
+import { RequestManager } from './request-manager';
 
 
 const rotasApp: Routes = [
   { path: 'cadastro', component: FormComponent },
-  { path: 'lista', component: AppointmentListComponent },
-  { path: 'detalhe/:id', component: DetailsComponent },
-  { path: 'editar/:id', component: FormComponent },
+  { path: 'lista', canActivate: [activateGuard], canDeactivate: [deactivateGuard], component: AppointmentListComponent },
+  { path: 'detalhe/:id', canActivate: [activateGuard], canDeactivate: [deactivateGuard], component: DetailsComponent },
+  { path: 'editar/:id', canActivate: [activateGuard], canDeactivate: [deactivateGuard], component: FormComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: LoginComponent },
-  { path: '', redirectTo: '/lista', pathMatch: 'full' }
+  { path: '', redirectTo: '/lista', pathMatch: 'full' },
+  { path: '**', redirectTo: '/login' }
 ];
 
 @NgModule({
@@ -33,7 +38,8 @@ const rotasApp: Routes = [
     FormComponent,
     LoginComponent,
     VerticalLineComponent,
-    ButtonStyledComponent
+    ButtonStyledComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +48,7 @@ const rotasApp: Routes = [
     RouterModule.forRoot(rotasApp),
     HttpClientModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: RequestManager, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

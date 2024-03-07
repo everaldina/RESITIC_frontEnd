@@ -1,16 +1,5 @@
 <div id="wrapper">
-  <header id="navbar">
-    <div id="menu">
-      <a routerLink="/cadastro" routerLinkActive="active">Cadastrar Consulta</a>
-      <a routerLink="/lista" routerLinkActive="active">Lista de Consultas</a>
-    </div>
-    <app-vertical-line></app-vertical-line>
-    <div id="login">
-      <app-button-styled *ngIf = "logged" (click)="logout()">Sair</app-button-styled>
-      <app-button-styled *ngIf = "!logged" (click)="signUp()">Inscrever </app-button-styled>
-      <app-button-styled *ngIf = "!logged" (click)="login()">Login</app-button-styled>
-    </div>
-  </header>
+  <app-header [isLogged] = "logged" (logout)="onLogout($event)" (login) = "onLogin($event)" (signup) = "onSignUp($event)"></app-header>
   <div id="content">
     <router-outlet></router-outlet>
   </div>

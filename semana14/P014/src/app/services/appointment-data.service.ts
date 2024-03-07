@@ -9,7 +9,7 @@ import { retry, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AppointmentDataService {
-  endpoint = 'https://residencia-55e35-default-rtdb.firebaseio.com/';
+  endpoint = 'https://residencia-55e35-default-rtdb.firebaseio.com';
   constructor(private http: HttpClient) {}
 
   httpOptions = {

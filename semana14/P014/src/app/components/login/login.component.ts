@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +16,9 @@ export class LoginComponent {
   editMode = false;
   appointmentId = '';
 
-  constructor(private route: ActivatedRoute, private router: Router) { 
+  @Output() auth = new EventEmitter<any>();
+
+  constructor(private route: ActivatedRoute, private router: Router, private authService: AuthService) { 
     this.form = new FormGroup({
       'name': new FormControl(null, [this.signUpMode.bind(this), Validators.maxLength(100)]),
       'email': new FormControl(null, [this.signUpMode.bind(this), Validators.email]),
@@ -55,10 +59,45 @@ export class LoginComponent {
   
 
   onSubmit() {
-    if (this.form.valid){
-      // logica para logar ou cadastrar
-      this.router.navigate(['/lista']);
+    if(this.form.valid){
+      const email = this.form.value.email;
+      const password = this.form.value.password;
+
+      if(this.logginIn){
+        this.authService.loginUser(email, password).subscribe(
+          responseData => {
+            this.router.navigate(['/lista']);
+          }
+        );
+      } else {
+        this.authService.signupUser(email, password).subscribe(
+          {
+            next: (responseData) => {
+              this.router.navigate(['/lista']);
+            },
+            error: (error) => {
+              console.log(error);
+              switch(error.error.error.message){
+                case 'EMAIL_EXISTS':
+                  alert('E-mail já cadastrado.');
+                  break;
+                default:
+                  alert('Ocorreu um erro ao cadastrar o usuário.');
+                  break;
+              
+              }
+            }
+            
+          }
+        );
+      }
+
+      this.form.reset();
     }
+
+    if(!this.logginIn)
+      alert('Campos inválidos');
+
   }
 
 }

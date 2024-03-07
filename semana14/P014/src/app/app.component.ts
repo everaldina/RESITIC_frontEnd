@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from './services/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,20 +10,35 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'P014';
-  logged: boolean = false;
+  logged: boolean =  false;
+  logInSubscribtion: Subscription;
 
-  constructor(private router: Router){
+  constructor(private router: Router, private authService: AuthService){
+    this.logInSubscribtion = this.authService.loggedIn.subscribe({
+      next: (value: boolean) => {
+        this.logged = value;
+        console.log('logged: ', this.logged);
+      }
+      }
+    )
   }
 
-  login(){
+  ngOnInit(){
+    this.logged = this.authService.isLogged();
+  }
+
+  onLogin(event: string){
     this.router.navigate(['/login']);
   }
 
-  logout(){
+  onLogout(event: string){
+    this.authService.logout();
     this.logged = false;
+    this.router.navigate(['/login']);
   }
 
-  signUp(){
+  onSignUp(event: string){
     this.router.navigate(['/signup']);
   }
+
 }
