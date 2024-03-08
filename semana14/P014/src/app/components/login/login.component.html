@@ -1,25 +1,24 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <label *ngIf="!logginIn" for="name">
-    Nome Completo:
+  <div class="field-container" *ngIf="!logginIn">
+    <label for="name"> Nome Completo: </label>
     <input type="text" name="name" formControlName="name" />
     <span
       class="error"
       *ngIf="form.get('name')?.invalid && form.get('name')?.touched"
       >Nome inválido</span
     >
-  </label>
-  <label for="email">
-    Email:
+  </div>
+  <div class="field-container">
+    <label for="email"> Email: </label>
     <input type="email" name="email" formControlName="email" />
     <span
       class="error"
       *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
       >Email inválido</span
     >
-  </label>
-  <br />
-  <label for="password">
-    Senha:
+  </div>
+  <div class="field-container">
+    <label for="password"> Senha: </label>
     <input type="password" name="password" formControlName="password" />
     <span
       class="error"
@@ -27,10 +26,9 @@
     >
       Minimo de 6 caracteres Maximo de 20 caracteres
     </span>
-  </label>
-  <br />
-  <label *ngIf="!logginIn" for="confirmPassword">
-    Confirmar senha:
+  </div>
+  <div class="field-container" *ngIf="!logginIn">
+    <label for="confirmPassword"> Confirmar senha: </label>
     <input
       type="password"
       name="confirmPassword"
@@ -54,9 +52,10 @@
     >
       Senhas não conferem
     </span>
-  </label>
-  <br />
-  <app-button-styled type="submit">
-    {{ logginIn ? "Login" : "Sign up" }}</app-button-styled
-  >
+  </div>
+  <div class="button-submit">
+    <app-button-styled type="submit">
+      {{ logginIn ? "Login" : "Sign up" }}</app-button-styled
+    >
+  </div>
 </form>

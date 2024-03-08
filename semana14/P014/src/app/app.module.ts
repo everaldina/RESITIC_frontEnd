@@ -20,7 +20,7 @@ import { RequestManager } from './request-manager';
 
 
 const rotasApp: Routes = [
-  { path: 'cadastro', component: FormComponent },
+  { path: 'cadastro', canActivate: [activateGuard], canDeactivate: [deactivateGuard], component: FormComponent },
   { path: 'lista', canActivate: [activateGuard], canDeactivate: [deactivateGuard], component: AppointmentListComponent },
   { path: 'detalhe/:id', canActivate: [activateGuard], canDeactivate: [deactivateGuard], component: DetailsComponent },
   { path: 'editar/:id', canActivate: [activateGuard], canDeactivate: [deactivateGuard], component: FormComponent },

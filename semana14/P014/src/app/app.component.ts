@@ -17,7 +17,6 @@ export class AppComponent {
     this.logInSubscribtion = this.authService.loggedIn.subscribe({
       next: (value: boolean) => {
         this.logged = value;
-        console.log('logged: ', this.logged);
       }
       }
     )
