@@ -32,3 +32,13 @@ button{
     background-color: darkgray;
     border-radius: 3px;
 }
+
+
+input.ng-invalid.ng-touched, select.ng-invalid.ng-touched{
+    border: 1px solid red;
+  }
+  
+span.error {
+    font-size: 10px;
+    color: red;
+}
