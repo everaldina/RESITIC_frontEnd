@@ -1,0 +1,64 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="input-field">
+      <label for="username"> Nome de usuario </label>
+      <input
+        type="text"
+        formControlName="username"
+        placeholder="Não possuir espaços"
+      />
+    </div>
+    <div class="input-field">
+      <label for="password"> Senha </label>
+      <input type="password" formControlName="password" placeholder="Possuir letra e caractere especial" />
+    </div>
+    <div class="input-field">
+      <label for="email"> Email </label>
+      <input type="email" formControlName="email" placeholder="Email" />
+    </div>
+    <div class="input-field">
+      <label for="full_name"> Nome completo </label>
+      <input
+        type="text"
+        formControlName="full_name"
+        placeholder="Nome e Sobrenome"
+      />
+    </div>
+    <div class="input-field">
+      <label for="number"> Telefone </label>
+      <input type="text" formControlName="number" placeholder="(XX) XXXXX-XXXX" />
+    </div>
+    <div class="input-field">
+      <label for="address"> Endereço </label>
+      <input type="text" formControlName="address" placeholder="Rua, numero, bairro" />
+    </div>
+    <div class="input-field">
+      <label for="date"> Data de nascimento</label>
+      <input type="date" formControlName="birthdate" placeholder="Apenas maiores de 18" />
+    </div>
+    <div class="input-field">
+      <label for="gender"> Genero </label>
+      <select name="gender" formControlName="gender">
+        <option value="fem">Feminino</option>
+        <option value="masc">Masculino</option>
+        <option value="other">Outro</option>
+      </select>
+    </div>
+    <div class="input-field">
+      <label for="occupation">
+        Ocupação
+      </label>
+      <select name="occupation" formControlName="occupation">
+        <option value="student">Estudante</option>
+        <option value="teacher">Professor</option>
+        <option value="seller">Vendedor</option>
+        <option value="engineer">Engenheiro</option>
+        <option value="doctor">Medico</option>
+        <option value="nurse">Enfermeiro</option>
+        <option value="other">Outro</option>
+      </select>
+    </div>
+    <div class="button-submit">
+      <button type="submit">Enviar</button>
+    </div>
+  </form>
+  

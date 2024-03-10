@@ -1,0 +1,44 @@
+.input-field{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.input-field input,  .input-field select{
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 18px);
+}
+
+.input-field select{
+    width: 100%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap:15px;
+}
+
+.button-submit{
+    margin: 0 auto;
+}   
+
+button{
+    cursor: pointer;
+    padding: 5px 5px;
+    background-color: darkgray;
+    border-radius: 3px;
+}
+
+
+input.ng-invalid.ng-touched, select.ng-invalid.ng-touched{
+    border: 1px solid red;
+  }
+  
+span.error {
+    font-size: 10px;
+    color: red;
+}
