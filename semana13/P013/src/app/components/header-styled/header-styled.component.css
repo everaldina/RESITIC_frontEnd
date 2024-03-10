@@ -1,0 +1,28 @@
+
+#navbar {
+    margin: 0;
+    overflow: hidden;
+    background-color: rgb(255, 162, 55);
+}
+#navbar ul{
+    margin: 0;
+}
+#navbar li {
+    float: left;
+    list-style: none;
+}
+
+#navbar li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#navbar li a:hover {
+    background-color: hsl(32, 100%, 70%); /* Cor de fundo quando hover */
+}
+
+#navbar li a.active {
+    background-color: hsl(32, 100%, 50%); /* Cor de fundo quando ativo */
+}

@@ -9,12 +9,15 @@ import { FormComponent } from './components/form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
+import { HeaderStyledComponent } from './components/header-styled/header-styled.component';
+import { ButtonStyledComponent } from './components/button-styled/button-styled.component';
 
 const rotasApp: Routes = [
   { path: 'cadastro', component: FormComponent },
   { path: 'lista', component: AppointmentListComponent },
   { path: 'detalhe/:id', component: DetailsComponent },
-  { path: 'editar/:id', component: FormComponent }
+  { path: 'editar/:id', component: FormComponent },
+  { path: '', redirectTo: '/lista', pathMatch: 'full' }
 ];
 
 
@@ -23,7 +26,9 @@ const rotasApp: Routes = [
     AppComponent,
     AppointmentListComponent,
     DetailsComponent,
-    FormComponent
+    FormComponent,
+    HeaderStyledComponent,
+    ButtonStyledComponent
   ],
   imports: [
     BrowserModule,
