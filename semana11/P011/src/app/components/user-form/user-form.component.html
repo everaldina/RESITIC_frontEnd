@@ -1,33 +1,51 @@
 <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-    <label for="username">
-        Nome de usuario
-        <input type="text" formControlName="username" placeholder="Nome de usuario">
-    </label>
-    <label for="password">
-        Senha
-        <input type="password" formControlName="password" placeholder="Senha">
-    </label>
-    <label for="email">
-        Email
-        <input type="email" formControlName="email" placeholder="Email">
-    </label>
-    <label for="full_name">
-        Nome completo
-        <input type="text" formControlName="full_name" placeholder="Nome completo">
-    </label>
-    <label for="number">
-        Numero
-        <input type="number" formControlName="number" placeholder="Numero">
-    </label>
-    <label for="date">
-        Data
-        <input type="date" formControlName="birthdate" placeholder="Data">
-    </label>
-    <label for="gender">
-        Genero
-    </label>
+  <div class="input-field">
+    <label for="username"> Nome de usuario </label>
+    <input
+      type="text"
+      formControlName="username"
+      placeholder="Nome de usuario"
+    />
+  </div>
+  <div class="input-field">
+    <label for="password"> Senha </label>
+    <input type="password" formControlName="password" placeholder="Senha" />
+  </div>
+  <div class="input-field">
+    <label for="email"> Email </label>
+    <input type="email" formControlName="email" placeholder="Email" />
+  </div>
+  <div class="input-field">
+    <label for="full_name"> Nome completo </label>
+    <input
+      type="text"
+      formControlName="full_name"
+      placeholder="Nome completo"
+    />
+  </div>
+  <div class="input-field">
+    <label for="number"> Numero </label>
+    <input type="number" formControlName="number" placeholder="Numero" />
+  </div>
+  <div class="input-field">
+    <label for="date"> Data </label>
+    <input type="date" formControlName="birthdate" placeholder="Data" />
+  </div>
+  <div class="input-field">
+    <label for="gender"> Genero </label>
+    <select name="gender" formControlName="gender">
+      <option value="fem">Feminino</option>
+      <option value="masc">Masculino</option>
+      <option value="other">Outro</option>
+    </select>
+  </div>
+  <div class="input-field">
     <label for="occupation">
-        Ocupação
-        <input type="text" formControlName="occupation" placeholder="Ocupação">
+      Ocupação
+      <input type="text" formControlName="occupation" placeholder="Ocupação" />
     </label>
+  </div>
+  <div class="button-submit">
+    <button type="submit">Enviar</button>
+  </div>
 </form>

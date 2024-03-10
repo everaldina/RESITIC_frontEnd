@@ -1,0 +1,15 @@
+#user-form{
+    font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 75vh;
+    margin: 0 auto;
+}
+
+h3{
+    text-align: center;
+    margin: 20px 0;
+}
+
+footer{
+    text-align: center;
+    margin-top: 20px;
+}
