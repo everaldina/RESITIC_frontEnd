@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "resitic-feb-p011",
     "public": "dist/p011/browser",
     "ignore": [
       "firebase.json",
