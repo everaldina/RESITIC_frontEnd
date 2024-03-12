@@ -1,0 +1,38 @@
+.wrapper{
+    font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
+    padding: 20px;
+    width: 75%;
+    background: rgb(253, 253, 253);
+    min-height: 100vh;
+    box-shadow:  0 4px 8px 0 hwb(0 95% 10%), 0 6px 20px 0 hwb(0 95% 10%);
+
+}
+
+.result-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.results{
+    padding: 0 18%;
+}
+
+h3{
+    margin-top: 15px;
+    margin-bottom: 20px;
+    color: rgb(26, 26, 26);
+}
+
+footer{
+    margin: 5px auto;
+    text-align: center;
+    font-family: 'Alumni Sans Pinstripe', sans-serif;
+    font-weight: bold;
+}
+
+footer a{
+    text-decoration: none;
+}
+
