@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "resitic-feb-p009",
+    "public": "dist/p009/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
