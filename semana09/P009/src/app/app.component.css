@@ -1,0 +1,9 @@
+.header{
+    height: 150px;
+}
+
+.route{
+    height: calc(100vh - 150px);
+    overflow: scroll;
+}
+

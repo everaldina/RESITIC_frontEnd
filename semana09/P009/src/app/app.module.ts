@@ -8,14 +8,14 @@ import { ProjectComponent } from './components/project/project.component';
 import { Router, RouterModule, Routes } from '@angular/router';
 
 const routesApp: Routes = [
-  { path: 'projects/:id', component: ProjectComponent }
+  { path: 'project/:url', component: ProjectComponent }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ProjectComponent
+    ProjectComponent,
   ],
   imports: [
     BrowserModule,

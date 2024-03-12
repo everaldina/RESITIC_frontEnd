@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +7,15 @@ import { Component, Input } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  @Input() projects: string[] = [];
+  @Input() projects: any[] = [];
+  @Output() reload: EventEmitter<any> = new EventEmitter();
+
+  constructor(private router: Router) {
+  }
+
+  renderProject(url:string) {
+    this.router.navigate([`project/${encodeURIComponent(url)}`]);
+    this.reload.emit();
+  }
+
 }

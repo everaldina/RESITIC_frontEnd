@@ -1,4 +1,3 @@
 <div>
-    <!--button *ngFor = 'let project of projects' [routerLink] = "['/project', project.id]">{{project.name}}</button-->
-    <button *ngFor = 'let project of projects'>{{project}}</button>
+    <button *ngFor = 'let project of projects' (click) = "renderProject(project.url)">{{project.name}}</button>
 </div>

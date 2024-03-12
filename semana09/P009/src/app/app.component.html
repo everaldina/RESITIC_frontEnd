@@ -1,4 +1,6 @@
-<div>
-  <app-header [projects] = "list_projects"></app-header>
+<div class = 'header'>
+  <app-header [projects]="projectList" (reload)="reloadFrame($event)"></app-header>
 </div>
-<router-outlet></router-outlet>
+<div class="route">
+  <router-outlet></router-outlet>
+<div>
