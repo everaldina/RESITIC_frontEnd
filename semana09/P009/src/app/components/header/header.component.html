@@ -1,3 +1,10 @@
-<div>
-    <button *ngFor = 'let project of projects' (click) = "renderProject(project.url)">{{project.name}}</button>
+<div class="select-bar">
+  <div
+    *ngFor="let project of projects"
+    (click)="onClick(project.url, project.name)"
+    class="project-selected"
+    [ngClass]="{ 'active': activeDiv === project.name }"
+  >
+    {{ project.name }}
+  </div>
 </div>
