@@ -9,13 +9,15 @@ import { BuscaWikiService } from './services/busca-wiki.service';
 export class AppComponent {
   title = 'P008';
   artigos: any[] = [];
+  searchKey: string = '';
 
   constructor(private buscaWikiService: BuscaWikiService) {}
 
-  search(key_search: string) {
+  search(searchValue: string) {
+    this.searchKey = searchValue;
     this.artigos = [];
     this.buscaWikiService
-      .search(key_search)
+      .search(this.searchKey)
       .then((response) =>
         response
           .json()

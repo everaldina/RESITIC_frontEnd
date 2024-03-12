@@ -1,0 +1,14 @@
+div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+h3{
+    font-size: 1.3rem;
+}
+
+.result-wrapper{
+    padding-bottom: 10px;
+    border-bottom: rgba(52, 52, 52, 0.499) 1px solid;
+}

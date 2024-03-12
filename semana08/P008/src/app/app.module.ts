@@ -8,13 +8,17 @@ import { ResultComponent } from './components/result/result.component';
 import { FormsModule } from '@angular/forms';
 import { HighlightPipe } from './highlight.pipe';
 import { ContinuePipe } from './continue.pipe';
+import { SearchComponent } from './components/search/search.component';
+import { ReadMoreComponent } from './components/read-more/read-more.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ResultComponent,
     HighlightPipe,
-    ContinuePipe
+    ContinuePipe,
+    SearchComponent,
+    ReadMoreComponent
   ],
   imports: [
     BrowserModule,

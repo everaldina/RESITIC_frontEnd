@@ -1,3 +1,11 @@
-<h3>{{title}}</h3>
-<p [innerHTML]="intro | highlight | continue"></p>
-<a [href]="link">Ler mais...</a>
+<div class="result-wrapper">
+    <div class="title">
+        <h3>{{title}}</h3>
+    </div>
+    <div class="intro">
+        <p [innerHTML]="intro | highlight | continue"></p>
+    </div>
+    <div>
+        <app-read-more [url]="link"></app-read-more>
+    </div>
+</div>
