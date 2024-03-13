@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-result',
@@ -8,5 +8,9 @@ import { Component, Input } from '@angular/core';
 export class ResultComponent {
   @Input() title: string = '';
   @Input() intro: string = '';
-  link: string = 'https://pt.wikipedia.org/wiki/' + this.title.replace(' ', '%20');
+  link: string = "";
+
+  ngOnInit() {
+    this.link = 'https://pt.wikipedia.org/wiki/' + this.title.replace(' ', '%20');
+  }
 }
