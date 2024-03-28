@@ -1,0 +1,9 @@
+<app-label [text]="titulo"></app-label>
+<div>
+    <button
+      *ngFor="let categoria of categories"
+      (click)="selecionarCategoria(categoria)"
+    >
+        {{ categoria }}
+    </button>
+</div>
